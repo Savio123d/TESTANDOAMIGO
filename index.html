@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Especial</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9c5d1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        h1 {
+            font-size: 2em;
+            color: #d32f2f;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .yes:hover {
+            background-color: #45a049;
+        }
+
+        .no {
+            background-color: #d32f2f;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quer namorar comigo?</h1>
+    <div class="container">
+        <div class="buttons">
+            <button class="yes" onclick="responderSim()">Sim</button>
+            <button class="no" onmouseover="fugir()">Não</button>
+        </div>
+    </div>
+
+    <script>
+        function responderSim() {
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Substitua pelo link desejado
+        }
+
+        function fugir() {
+            let botaoNao = document.querySelector(".no");
+            let larguraJanela = window.innerWidth - 100; // Garante que o botão não saia da tela
+            let alturaJanela = window.innerHeight - 50;
+
+            let novaPosicaoX = Math.random() * larguraJanela;
+            let novaPosicaoY = Math.random() * alturaJanela;
+
+            botaoNao.style.left = `${novaPosicaoX}px`;
+            botaoNao.style.top = `${novaPosicaoY}px`;
+        }
+    </script>
+</body>
+</html>
